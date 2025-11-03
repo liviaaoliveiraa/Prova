@@ -1,0 +1,26 @@
+{
+  "name": "provaaa",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cls && nodemon studio",
+    "studio": "npx prisma studio"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.cjs"
+  },
+  "keywords": [
+    "Server"
+  ],
+  "author": "Lívia",
+  "license": "MIT",
+  "description": "Fazendo Servidor om banco",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.18.0"
+  }
+}
