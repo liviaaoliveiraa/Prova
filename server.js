@@ -1,6 +1,6 @@
 import express from 'express' ;
 import dotenv from 'dotenv' ;
-import youtubersRoute from './src/routes/youtubersRoute.js'
+import youtubersRoute from './src/routes/youtubersRoute.js '
 
 const app = express();
 app.use(express.json());
