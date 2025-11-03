@@ -87,25 +87,25 @@ export const deletar = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
 
-        const youtuberExiste = await comidasModels.encontreUm(id);
+        const youtuberExiste = await youtubersModel.encontreUm(id);
 
-        if (!comidaExiste) {
+        if (!youtuberExiste) {
             return res.status(404).json({
-                erro: 'Comida não econtrado com esse id',
+                erro: 'youtuber não econtrado com esse id',
                 id: id
             })
         }
 
-        await comidasModels.deletar(id);
+        await youtubersModel.deletar(id);
 
         res.status(200).json({
-            mensagem: ' Comida apagada com sucesso!',
-            comidaRemovida: comidaExiste
+            mensagem: ' youtuber apagado com sucesso!',
+            youtuberRemovido: youtuberExiste
         })
 
     }catch (error) {
         res.status(500).json({
-            erro: ' Erro ao apagar a comida!',
+            erro: ' Erro ao apagar o youtuber!',
             detalhes: error.message
         })
     }
@@ -116,25 +116,25 @@ export const atualizar = async (req, res) => {
       const id = parseInt(req.params.id);
       const dados = req.body;
   
-      const comidaExiste = await comidasModels.encontreUm(id);
+      const youtuberExiste = await youtubersModel.encontreUm(id);
   
-      if (!comidaExiste) {
+      if (!youtuberExiste) {
         return res.status(404).json({
-          erro: 'Comida não existe',
+          erro: 'youtuber não existe',
           id: id
         });
       }
   
-      const comidaAtualizada = await comidasModels.atualizar(id, dados);
+      const youtuberAtualizado = await youtubersModel.atualizar(id, dados);
   
       res.status(200).json({
-        mensagem: 'Comida atualizada com sucesso!',
-        comida: comidaAtualizada
+        mensagem: 'youtubers atualizada com sucesso!',
+        youtuber: youtuberAtualizado
       });
   
     } catch (error) {
       res.status(500).json({
-        erro: 'Erro ao atualizar a comida!',
+        erro: 'Erro ao atualizar o youtuber!',
         detalhes: error.message
       });
     }
